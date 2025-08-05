@@ -24,22 +24,29 @@ body {
 }
 
 #buttons {
-    background-color: grey;
     height: fit-content;
     display: flex;
     flex-direction: column;
+    gap: 12px;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
+    gap: 12px;
 }
 
 .button {
     aspect-ratio: 1 / 1;
     flex-basis: 25%;
+    background-color: grey;
+    border-radius: 16px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.button.inv {
+    background-color: rgba(0,0,0,0);
 }

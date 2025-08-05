@@ -61,3 +61,7 @@ body {
 .button.inv {
     background-color: rgba(0,0,0,0);
 }
+
+.pressed {
+    background-color: #999999;
+}

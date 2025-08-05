@@ -16,11 +16,13 @@ body {
     width: 300px;
     height: fit-content;
     padding: 25px;
+    border-radius: 16px;
 }
 
 #display {
     background-color: green;
     height: 75px;
+    border-radius: 16px;
 }
 
 #buttons {

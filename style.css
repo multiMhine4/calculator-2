@@ -12,7 +12,7 @@ body {
     background-color: #aaaaaa;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 12px;
     width: 300px;
     height: fit-content;
     padding: 25px;

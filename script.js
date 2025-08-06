@@ -76,5 +76,5 @@ buttons.forEach((button) => {
 
 for (let i=0; i<=9; i++) {
     const button_i = document.querySelector(`.n${i}`);
-    button_i.addEventListener("mousedown", () => { updateNum(`${i}`) });
+    button_i.addEventListener("mousedown", () => updateNum(`${i}`));
 }

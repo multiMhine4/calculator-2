@@ -39,7 +39,7 @@ const calcManager = {
 
 function updateNum(numChar) {
     const cur = calcManager.focus;
-    if (calcManager[cur] == 0) {
+    if (calcManager[cur] == 0 || calcManager[cur] == null) {
         calcManager[cur] = numChar;
     } else {
         calcManager[cur] = calcManager[cur] + numChar;

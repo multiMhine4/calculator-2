@@ -59,6 +59,7 @@ function updateOp(op) {
             const result = String( operate(arg1, arg2, curOp) );
             displayManager.show(result);
             calcManager.num1 = String(result);
+            calcManager.num2 = null;
             calcManager.op = op;
             calcManager.focus = "num2"; 
         }

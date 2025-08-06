@@ -17,7 +17,7 @@ const displayManager = {
     },
 
     clear: function() {
-        displayDiv.innerText = "";
+        displayDiv.innerText = "0";
     }
 }
 
@@ -73,3 +73,8 @@ buttons.forEach((button) => {
         e.target.classList.toggle("pressed");    
     });
 });
+
+for (let i=0; i<=9; i++) {
+    const button_i = document.querySelector(`.n${i}`);
+    button_i.addEventListener("mousedown", () => { updateNum(`${i}`) });
+}

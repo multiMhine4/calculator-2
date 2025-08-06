@@ -99,3 +99,23 @@ button_div.addEventListener("mousedown", () => { updateOp(div) });
 button_mul.addEventListener("mousedown", () => { updateOp(mul) });
 button_sub.addEventListener("mousedown", () => { updateOp(sub) });
 button_plu.addEventListener("mousedown", () => { updateOp(plu) });
+
+const button_eq = document.querySelector('.equ');
+button_eq.addEventListener("mousedown", () => {
+    if (calcManager.num2 == null) {
+        if (calcManager.op != null) {
+            displayManager.clear();
+            calcManager.num1 = "0";
+            calcManager.num2 = null;
+            calcManager.op = null;
+        }
+    } else {
+        const [arg1, arg2, curOp] = [+calcManager.num1, +calcManager.num2, calcManager.op];
+        const result = String( operate(arg1, arg2, curOp) );
+        displayManager.show(result);
+        calcManager.num1 = String(result);
+        calcManager.num2 = null;
+        calcManager.op = null;
+        calcManager.focus = "num2"; 
+    }
+});

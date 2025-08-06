@@ -49,8 +49,13 @@ function updateNum(numChar) {
 
 function updateOp(op) {
     if (calcManager.op == null) {
+        if (calcManager.num2 != null) {
+            calcManager.num1 = calcManager.num2; 
+            calcManager.num2 = null;
+        }
         calcManager.op = op;
         calcManager.focus = "num2";
+
     } else {
         if (calcManager.num2 == null) {
             calcManager.op = op;
@@ -108,6 +113,7 @@ button_eq.addEventListener("mousedown", () => {
             calcManager.num1 = "0";
             calcManager.num2 = null;
             calcManager.op = null;
+            calcManager.focus = "num1";
         }
     } else {
         const [arg1, arg2, curOp] = [+calcManager.num1, +calcManager.num2, calcManager.op];

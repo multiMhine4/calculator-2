@@ -80,3 +80,21 @@ for (let i=0; i<=9; i++) {
     const button_i = document.querySelector(`.n${i}`);
     button_i.addEventListener("mousedown", () => updateNum(`${i}`));
 }
+
+const button_ac = document.querySelector('.ac');
+button_ac.addEventListener("mousedown", () => {
+    displayManager.clear();
+    calcManager.num1 = "0";
+    calcManager.num2 = null;
+    calcManager.op = null;
+    calcManager.focus = "num1";
+});
+
+const button_div = document.querySelector(".div");
+const button_mul = document.querySelector(".mul");
+const button_sub = document.querySelector(".sub");
+const button_plu = document.querySelector(".plu");
+button_div.addEventListener("mousedown", () => { updateOp(div) });
+button_mul.addEventListener("mousedown", () => { updateOp(mul) });
+button_sub.addEventListener("mousedown", () => { updateOp(sub) });
+button_plu.addEventListener("mousedown", () => { updateOp(plu) });

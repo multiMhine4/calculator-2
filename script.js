@@ -21,6 +21,48 @@ const displayManager = {
     }
 }
 
+const add = (a,b) => a+b;
+const sub = (a,b) => a-b;
+const mul = (a,b) => a*b;
+const div = (a,b) => a/b;
+
+function operate(arg1,arg2,op) {
+    return op(arg1,arg2);
+}
+
+const calcManager = {
+    num1: "0",
+    num2: null,
+    op: null,
+    focus: "num1"
+}
+
+function updateNum(numChar) {
+    const cur = calcManager.focus;
+    if (calcManager[cur] == 0) {
+        calcManager[cur] = numChar;
+    } else {
+        calcManager[cur] = calcManager[cur] + numChar;
+    }
+    displayManager.show( calcManager[cur] );
+}
+
+function updateOp(op) {
+    if (op == null) {
+        calcManager.focus = "num2";
+    } else {
+        if (calcManager.num2 == null) {
+            calcManager.op = op;
+        } else {
+            const [arg1, arg2] = [+calcManager.num1, +calcManager.num2];
+            const result = operate(arg1, arg2, op);
+            displayManager.show(result);
+            calcManager.num1 = String(result);
+            calcManager.focus = "num1"; 
+        }
+    }
+}
+
 const buttons = document.querySelectorAll(".button");
 
 buttons.forEach((button) => {

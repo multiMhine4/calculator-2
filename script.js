@@ -48,17 +48,19 @@ function updateNum(numChar) {
 }
 
 function updateOp(op) {
-    if (op == null) {
+    if (calcManager.op == null) {
+        calcManager.op = op;
         calcManager.focus = "num2";
     } else {
         if (calcManager.num2 == null) {
             calcManager.op = op;
         } else {
-            const [arg1, arg2] = [+calcManager.num1, +calcManager.num2];
-            const result = operate(arg1, arg2, op);
+            const [arg1, arg2, curOp] = [+calcManager.num1, +calcManager.num2, calcManager.op];
+            const result = String( operate(arg1, arg2, curOp) );
             displayManager.show(result);
             calcManager.num1 = String(result);
-            calcManager.focus = "num1"; 
+            calcManager.op = op;
+            calcManager.focus = "num2"; 
         }
     }
 }
